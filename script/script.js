@@ -1,6 +1,13 @@
 const app = new Vue({
     el : '#app',
     data : {
-        apiUrl : "https://flynn.boolean.careers/exercises/api/array/music",
+        myArr : [],
+    },
+    created() {
+        axios
+        .get('http://localhost/php-ajax-dischi/api.php')
+        .then(element => 
+            this.myArr = element.data.response
+        );
     }
 })

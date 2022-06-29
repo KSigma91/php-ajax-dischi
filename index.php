@@ -10,16 +10,47 @@
 <body>
     <div id="app">
         <header>
-            <img src="assets/img/logo-small_2.png" alt="log_img">
+            <img src="assets/img/logo-small_2.png" alt="logo_img">
         </header>
-
+        
         <main>
-
+            <div class="card-area">
+                <div class="card"
+                v-for="(album, index) in myArr" :key="index">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img :src="album.poster">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>
+                                    {{ album.title }}
+                                </h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h3>
+                                    {{ album.author }}
+                                </h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h4>
+                                    {{ album.year }}
+                                </h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>       
         </main>
-
-    </div>
-
-
+    </div> 
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="script/script.js"></script>
