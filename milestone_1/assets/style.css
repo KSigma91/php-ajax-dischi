@@ -50,7 +50,7 @@ main {
     justify-content: center;
     background: #1e2d3b;
     width: 100%;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 70px);
     text-align: center;
 }
 
@@ -61,7 +61,7 @@ main .card-area {
     align-content: center;
     gap: 19px;
     width: 58%;
-    height: calc(100vh - 127px);
+    /* height: calc(100vh - 127px); */
 }
 
 .card-area .card {

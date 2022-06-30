@@ -5,12 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
-    <title>PHP Ajax dischi</title>
+    <title>Dischi Ajax</title>
 </head>
 <body>
     <div id="app">
         <header>
             <img src="assets/img/logo-small_2.png" alt="logo_img">
+            <div class="search_bar">
+                <select name="genre"
+                @change="filterGenre" v-model="changeGenre">
+                    <option value="all">All</option>
+                    <option value="genre"
+                    v-for="(genre, index) in genres" :key="index"
+                    :value="genre">
+                        {{ genre }}
+                    </option>
+                </select>
+            </div>
         </header>
         
         <main>
@@ -20,7 +31,7 @@
                     <ul>
                         <li>
                             <a href="#">
-                                <img :src="album.poster">
+                                <img :src="album.poster" :alt="album.title">
                             </a>
                         </li>
                         <li>
@@ -33,7 +44,7 @@
                         <li>
                             <a href="#">
                                 <h3>
-                                    {{ album.author }}
+                                    {{ album.author}}
                                 </h3>
                             </a>
                         </li>
@@ -48,9 +59,9 @@
                 </div>
             </div>       
         </main>
-    </div> 
-    
-    
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="script/script.js"></script>
